@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="SettingsToggle">
+        <attr name="text1" format="string" />
+        <attr name="text2" format="string" />
+        <attr name="text3" format="string" />
+        <attr name="statecount" format="integer" />
+        <attr name="textColor" format="string" />
+        <attr name="backgroundcolor" format="color" />
+        <attr name="dotcolor" format="color" />
+        <attr name="backgrounddrawable" format="integer" />
+        <attr name="dotdrawable" format="integer" />
+        <attr name="textcolorfrom" format="color" />
+        <attr name="textcolorto" format="color" />
+    </declare-styleable>
+</resources>
