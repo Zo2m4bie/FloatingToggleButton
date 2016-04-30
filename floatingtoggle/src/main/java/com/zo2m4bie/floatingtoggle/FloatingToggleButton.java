@@ -99,34 +99,39 @@ public class FloatingToggleButton extends RelativeLayout implements View.OnClick
         }
     }
 
-
     @Override
     protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
         super.onMeasure(widthMeasureSpec, heightMeasureSpec);
         int width = getWidth();
         mToggleCircle.getLayoutParams().width = width / mStateCount;
 
-        setState();
+        setState(mCurrentState);
     }
 
     public FloatingToggleButton(Context context) {
         this(context, null);
     }
 
-    public void setState() {
+    public void setState(int stateNumber) {
         if (isInEditMode())
             return; //isInEditMode(): if being rendered in IDE preview, skip code that will break
 
-        switch (mCurrentState) {
+        switch (stateNumber) {
             case 0:
+                mCurrentState = stateNumber;
                 mToggleCircle.setX(0);
                 if(mTextColorTo != -1) mTextView1.setTextColor(mTextColorTo);
                 break;
             case 1:
+                mCurrentState = stateNumber;
                 mToggleCircle.setX(getWidth() / mStateCount);
                 if(mTextColorTo != -1) mTextView2.setTextColor(mTextColorTo);
                 break;
             case 2:
+                if(mStateCount == 2){
+                    return;
+                }
+                mCurrentState = stateNumber;
                 mToggleCircle.setX((getWidth() / 3) * 2);
                 if(mTextColorTo != -1) mTextView3.setTextColor(mTextColorTo);
                 break;
@@ -161,7 +166,7 @@ public class FloatingToggleButton extends RelativeLayout implements View.OnClick
     private void changeColor(TextView tv, int textColorFrom, int textColorTo) {
         if(textColorFrom == -1 || textColorTo == -1)
             return;
-        
+
         ValueAnimator colorAnimationTo = ValueAnimator.ofObject(new ArgbEvaluator(), textColorFrom, textColorTo);
         colorAnimationTo.setDuration(250); // milliseconds
         colorAnimationTo.addUpdateListener(new ChangeColorCallback(tv));
