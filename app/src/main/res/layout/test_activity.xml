@@ -3,7 +3,7 @@
                 xmlns:widget="http://schemas.android.com/apk/res-auto"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:background="@color/darkGray"
+                android:background="@color/white"
                 android:paddingLeft="@dimen/activity_horizontal_margin"
                 android:paddingRight="@dimen/activity_horizontal_margin"
                 android:paddingTop="@dimen/activity_vertical_margin"
@@ -18,7 +18,7 @@
         widget:backgrounddrawable="@drawable/layout_bg"
         widget:dotdrawable="@drawable/pin_bg"
         widget:textcolorfrom="@color/green"
-        widget:textcolorto="@color/gold"
+        widget:textcolorto="@color/colorAccent"
         widget:text1="first"
         widget:text2="second"
         widget:text3="third" />
