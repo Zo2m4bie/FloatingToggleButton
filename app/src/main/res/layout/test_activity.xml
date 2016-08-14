@@ -18,7 +18,7 @@
         widget:backgrounddrawable="@drawable/layout_bg"
         widget:dotdrawable="@drawable/pin_bg"
         widget:textcolorfrom="@color/green"
-        widget:textcolorto="@color/colorAccent"
+        widget:textcolorto="@color/white"
         widget:text1="first"
         widget:text2="second"
         widget:text3="third" />

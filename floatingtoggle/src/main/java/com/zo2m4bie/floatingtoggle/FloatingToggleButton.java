@@ -34,7 +34,6 @@ public class FloatingToggleButton extends RelativeLayout implements View.OnClick
     private int mStateCount = 2;
 
     private ObjectAnimator mCurrentAnimator;
-    private ValueAnimator mColorAnimationTo;
     private IStateSelected mStateSelected;
     private int mCurrentState;
     private int mTextColorFrom, mTextColorTo;
@@ -158,8 +157,7 @@ public class FloatingToggleButton extends RelativeLayout implements View.OnClick
                 break;
         }
 
-        if(mTextColorTo != -1)
-            mTextViews[stateNumber].setTextColor(mTextColorTo);
+        mTextViews[stateNumber].setTextColor(mTextColorTo);
     }
 
     @Override
@@ -173,9 +171,6 @@ public class FloatingToggleButton extends RelativeLayout implements View.OnClick
         mCurrentAnimator = AnimationUtils.getToggleCircleAnimator(mToggleCircle, getWidth(),
                 mStateCount, oldState, mCurrentState);
         mCurrentAnimator.start();
-
-        if(mTextColorTo == -1 || mTextColorFrom == -1)
-            return;
 
         AnimationUtils.getChangeColorAnimation(getSerlectedTextView(oldState),
                 mTextColorTo, mTextColorFrom).start();
@@ -214,15 +209,9 @@ public class FloatingToggleButton extends RelativeLayout implements View.OnClick
         super.onDetachedFromWindow();
         if(mCurrentAnimator != null)
             mCurrentAnimator.cancel();
-
-        if(mColorAnimationTo != null)
-            mColorAnimationTo.cancel();
     }
 
     private void changeColor(TextView tv, int textColorFrom, int textColorTo) {
-        if(textColorFrom == -1 || textColorTo == -1)
-            return;
-
         AnimationUtils.getChangeColorAnimation(tv, textColorFrom, textColorTo);
     }
 
@@ -233,6 +222,10 @@ public class FloatingToggleButton extends RelativeLayout implements View.OnClick
 
     public TextView getTextView(int position) {
         return mTextViews[position];
+    }
+
+    public int getCurrentSelectedState(){
+        return mCurrentState;
     }
 
 }
