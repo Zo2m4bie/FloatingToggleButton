@@ -129,7 +129,7 @@ public class FloatingToggleButton extends RelativeLayout implements View.OnClick
     @Override
     protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
         super.onMeasure(widthMeasureSpec, heightMeasureSpec);
-        int width = getWidth();
+        int width = getMeasuredWidth();
         mToggleCircle.getLayoutParams().width = width / mStateCount;
 
         setState(mCurrentState);
