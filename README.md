@@ -32,7 +32,7 @@ For working implemination of this project see the `/app` folder.
 
 NOTE: Don't forget  include custom view attribute in top layout
 
-   xmlns:widget="http://schemas.android.com/apk/res-auto"
+     xmlns:widget="http://schemas.android.com/apk/res-auto"
 
 3. In your activity/fragment bind view. Set StateSelected listener to be notified if state is changed.
 
