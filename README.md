@@ -4,16 +4,17 @@ Toggle button which has 2 or 3 states(optionally) and it has text inside of view
 
 # Usage
 
-For working implemination of this project see the '/app' folder.
+For working implemination of this project see the `/app` folder.
 
-1. Include following string in your 'build.gradle' file:
+1. Include following string in your `build.gradle` file:
 
 ```gradle
-    compile 'com.zo2m4bie.floatingtoggle:floatingtoggle:0.0.4
+    compile 'com.zo2m4bie.floatingtoggle:floatingtoggle:0.0.4'
 ```
 
 2. Include the FloatingToggleButton into your layout.
 
+```xml
     <com.zo2m4bie.floatingtoggle.FloatingToggleButton
         android:id="@+id/toggle"
         android:id="match_parent"
@@ -27,6 +28,7 @@ For working implemination of this project see the '/app' folder.
         widget:text1="first"
         widget:text2="second"
         widget:text3="third" />
+```
 
 NOTE: Don't forget  include custom view attribute in top layout
 
@@ -61,4 +63,3 @@ FloatingToggleButton has several options which you can use to customize toggle f
 
      Copyright (C) 2016 Dmytro Kovalenko
      Licensed under the Apache License, Version 2.0
-    
