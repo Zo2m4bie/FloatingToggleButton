@@ -2,7 +2,7 @@
 
 Toggle button which has 2 or 3 states(optionally) and it has text inside of view for each state.
 
-![](https://www.dropbox.com/s/pmr6hsmh7zywmut/floating.gif?dl=0)
+![](https://github.com/Zo2m4bie/FloatingToggleButton/blob/master/floating.gif)
 
 # Usage
 
