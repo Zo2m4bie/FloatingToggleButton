@@ -2,6 +2,8 @@
 
 Toggle button which has 2 or 3 states(optionally) and it has text inside of view for each state.
 
+![](https://www.dropbox.com/s/pmr6hsmh7zywmut/floating.gif?dl=0)
+
 # Usage
 
 For working implemination of this project see the `/app` folder.
